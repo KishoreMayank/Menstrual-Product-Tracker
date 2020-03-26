@@ -1,5 +1,8 @@
 # Menstrual-Product-Tracker
 
+Install npm with:<br /> 
+https://nodejs.org/en/
+
 Assuming npm is installed:
 
 cd Menstrual-Product-Tracker <br /> 
