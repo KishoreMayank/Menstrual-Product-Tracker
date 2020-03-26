@@ -1,0 +1,6 @@
+module Pods_reactApp {
+  umbrella header "Pods-reactApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
