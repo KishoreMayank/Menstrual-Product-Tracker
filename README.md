@@ -2,7 +2,7 @@
 
 Assuming npm is installed:
 
-cd Menstrual-Product-Tracker\n
-npm install -g expo-cli
-yarn install
-npm start
+cd Menstrual-Product-Tracker <br /> 
+npm install -g expo-cli<br />
+yarn install<br />
+npm start<br />
