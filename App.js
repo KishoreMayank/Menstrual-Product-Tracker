@@ -19,14 +19,15 @@ export default class App extends Component {
       longitude: 37.600425,
       latitude: -122.385861,
       error: null,
+      coordsLoc: [[33.773540, -84.398209], [33.774195, -84.398672], [33.774458, -84.396374], [33.776896, -84.396139]]
     };
   }
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(position => {
       this.setState({
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
+        latitude: position.coords.coordsLoc[0][0],
+        longitude: position.coords.coordsLoc[0][1],
         error: null
       });
     },
@@ -48,6 +49,16 @@ export default class App extends Component {
           }}
         >
           <Marker coordinate = {this.state} />
+          {this.state.coordsLoc[0] != null && this.state.coordsLoc.map((marker, index) => (
+            <Marker
+                key = {index}
+                coordinate = {{
+                    latitude: marker[0],
+                    longitude: marker[1]
+                }}
+                title = { "test" }
+            />
+          ))}
         </MapView>
   
         <Text style={styles.titleText}> Nearest Feminine Products </Text>
