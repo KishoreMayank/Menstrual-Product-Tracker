@@ -64,7 +64,6 @@ export default class App extends Component {
         <Text style={styles.titleText}> Nearest Feminine Products </Text>
         <Text>Click button below to generate nearest location</Text>
 
-        {/* <Button title = "Generate" onPress={() => alert('Your epicenter is 168 Matthews Farm Rd')}/> */}
         <Button title = "Generate" onPress={() => alert('The nearst product is the Student Center womens bathroom on level 1')}/>
       
       </View>
