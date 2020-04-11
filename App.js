@@ -6,6 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import MapView, { Marker, Callout } from 'react-native-maps';
 import MapPage from "./MapPage";
 import Chat from "./Chat";
+import Profile from "./Profile";
 import { StyleSheet, Text, View, Button, CheckBox, Dimensions, TouchableOpacity, AlertIOS,} from 'react-native';
 
 const {width, height} = Dimensions.get('window')
@@ -32,6 +33,10 @@ export default class App extends Component {
           <Stack.Screen
               name="Message"
               component={Chat}
+          />
+          <Stack.Screen
+              name="Profile"
+              component={Profile}
           />
         </Stack.Navigator>
       </NavigationContainer>
