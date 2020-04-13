@@ -7,6 +7,7 @@ import MapView, { Marker, Callout } from 'react-native-maps';
 import MapPage from "./MapPage";
 import Chat from "./Chat";
 import Profile from "./Profile";
+import Preference from "./Preference";
 import { StyleSheet, Text, View, Button, CheckBox, Dimensions, TouchableOpacity, AlertIOS,} from 'react-native';
 
 const {width, height} = Dimensions.get('window')
@@ -25,7 +26,7 @@ export default class App extends Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Profile">
+        <Stack.Navigator initialRouteName="Preference">
           <Stack.Screen
               name="Map"
               component={MapPage}
@@ -37,6 +38,10 @@ export default class App extends Component {
           <Stack.Screen
               name="Profile"
               component={Profile}
+          />
+          <Stack.Screen
+              name="Preference"
+              component={Preference}
           />
         </Stack.Navigator>
       </NavigationContainer>
