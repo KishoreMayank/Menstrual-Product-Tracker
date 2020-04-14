@@ -26,7 +26,7 @@ export default class App extends Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Preference">
+        <Stack.Navigator initialRouteName="MapPage">
           <Stack.Screen
               name="Map"
               component={MapPage}

@@ -59,7 +59,7 @@ export default class Preference extends Component {
           <View style={styles.body}>
             <View style={styles.buttonContainer}>
               <Button
-                onPress={() => alert('Your preferences have been saved!')}
+                onPress={() => this.props.navigation.navigate('Profile')}
                 title="Save Preferences"
                 color="#841584"
               />

@@ -33,8 +33,8 @@ export default class Profile extends Component {
           <View style={styles.body}>
             <View style={styles.buttonContainer}>
               <Button
-                onPress={this._onPressButton}
-                title="Go to Map"
+                onPress={() => this.props.navigation.navigate('Preference')}
+                title="Go to Preference"
                 color="#841584"
               />
             </View>

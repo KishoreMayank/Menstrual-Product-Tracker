@@ -47,10 +47,10 @@ export default class MapPage extends Component {
                 <MapView
                     style={styles.map}
                     region={{
-                        latitude: this.state.latitude,
-                        longitude: this.state.longitude,
-                        latitudeDelta: 0.0922,
-                        longitudeDelta: 0.0421,
+                        latitude: this.state.coordsLoc[0][0],
+                        longitude: this.state.coordsLoc[0][1],
+                        latitudeDelta: 0.0022,
+                        longitudeDelta: 0.0121,
                     }}
                 >
                     <Marker coordinate = {this.state} />
@@ -62,6 +62,7 @@ export default class MapPage extends Component {
                                 longitude: marker[1]
                             }}
                             onCalloutPress={() => this.openChat(index)}
+                            title={marker[2]}
                         >
                             <Callout tooltip>
                                 <View style={styles.bubble} >
@@ -74,9 +75,10 @@ export default class MapPage extends Component {
                 </MapView>
 
                 <Text style={styles.titleText}> Nearest Feminine Products </Text>
-                <Text>Click button below to generate nearest location</Text>
+                <Text style={{backgroundColor: 'white', opacity: 0.75}}>Click button below to generate nearest location</Text>
 
-                <Button title = "Generate" onPress={() => alert('The nearst product is the Student Center womens bathroom on level 1')}/>
+                <Button style={{backgroundColor: 'white', opacity: 0.75}} title = "Generate" onPress={() => alert('The nearst product is the Student Center womens bathroom on level 1')}/>
+                <Button onPress={() => this.props.navigation.navigate('Profile')} title="Go to Profile" color="#841584"/>
 
             </View>
         );
@@ -91,10 +93,16 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#add8e6',
         alignItems: 'center',
-        justifyContent: 'center',
+        paddingTop: 20,
+        justifyContent: 'flex-start',
     },
     titleText: {
         fontSize: 30,
+        backgroundColor: 'white', 
+        opacity: 0.75,
+    },
+    buttonContainer: {
+        margin: 20,
     },
     bubble: {
         flex: 1,
