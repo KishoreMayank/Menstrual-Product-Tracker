@@ -8,6 +8,8 @@ import MapPage from "./MapPage";
 import Chat from "./Chat";
 import Profile from "./Profile";
 import Preference from "./Preference";
+import AllUsers from "./AllUsers";
+import UserArray from "./UserArray";
 import { StyleSheet, Text, View, Button, CheckBox, Dimensions, TouchableOpacity, AlertIOS,} from 'react-native';
 
 const {width, height} = Dimensions.get('window')
@@ -42,6 +44,10 @@ export default class App extends Component {
           <Stack.Screen
               name="Preference"
               component={Preference}
+          />
+          <Stack.Screen
+              name="AllUsers"
+              component={AllUsers}
           />
         </Stack.Navigator>
       </NavigationContainer>

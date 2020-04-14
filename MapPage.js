@@ -38,7 +38,7 @@ export default class MapPage extends Component {
     }
 
     openChat(key) {
-        this.props.navigation.navigate('Message')
+        this.props.navigation.navigate('AllUsers')
     }
 
     render() {
@@ -66,8 +66,7 @@ export default class MapPage extends Component {
                         >
                             <Callout tooltip>
                                 <View style={styles.bubble} >
-                                    <Text>{"Person"}{"\n"}{"marker.description"}</Text>
-                                    <Button title = "Message"/>
+                                    <Button title = "Frequented Users"/>
                                 </View>
                             </Callout>
                         </Marker>
@@ -77,7 +76,7 @@ export default class MapPage extends Component {
                 <Text style={styles.titleText}> Nearest Feminine Products </Text>
                 <Text style={{backgroundColor: 'white', opacity: 0.75}}>Click button below to generate nearest location</Text>
 
-                <Button style={{backgroundColor: 'white', opacity: 0.75}} title = "Generate" onPress={() => alert('The nearst product is the Student Center womens bathroom on level 1')}/>
+                <Button style={{backgroundColor: 'white', opacity: 0.75}} title = "Generate" onPress={() => alert('The nearest product is at: Student Center Bathroom Level 1')}/>
                 <Button onPress={() => this.props.navigation.navigate('Profile')} title="Go to Profile" color="#841584"/>
 
             </View>
@@ -98,7 +97,7 @@ const styles = StyleSheet.create({
     },
     titleText: {
         fontSize: 30,
-        backgroundColor: 'white', 
+        backgroundColor: 'white',
         opacity: 0.75,
     },
     buttonContainer: {

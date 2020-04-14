@@ -19,7 +19,7 @@ export default class Chat extends React.Component {
             messages: [
                 {
                     _id: 1,
-                    text: 'Hello developer',
+                    text: 'Hello there!',
                     createdAt: new Date(),
                     user: {
                         _id: 2,
