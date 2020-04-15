@@ -1,17 +1,36 @@
-import app from 'firebase/app';
+import * as firebase from 'firebase';
+import '@firebase/firestore';
 
-const config = {
+// Initialize Firebase
+const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
   databaseURL: process.env.REACT_APP_DATABASE_URL,
-  projectId: process.env.REACT_APP_PROJECT_ID,
+  projectId: "menstrual-product-tracker-db",
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
-class Firebase {
-  constructor() {
-    app.initializeApp(config);
-  }
+firebase.initializeApp(firebaseConfig);
+
+const dbh = firebase.firestore();
+
+export function getAllUsers() {
+  return new Promise(executeGetAllUsers);
 }
-export default Firebase;
+
+function executeGetAllUsers(resolutionFunc, rejectionFunc) {
+  dbh.collection("users").get()
+      .then(r => resolutionFunc(r.docs))
+      .catch(e => rejectionFunc(e));
+}
+
+export function getAllPins() {
+  return new Promise(executeGetAllPins);
+}
+
+function executeGetAllPins(resolutionFunc, rejectionFunc) {
+  dbh.collection("pins").get()
+      .then(r => resolutionFunc(r.docs))
+      .catch(e => rejectionFunc(e));
+}

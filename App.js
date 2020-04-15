@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {decode, encode} from 'base-64'
+
+if (!global.btoa) {  global.btoa = encode }
+
+if (!global.atob) { global.atob = decode }
 
 import MapView, { Marker, Callout } from 'react-native-maps';
 import MapPage from "./MapPage";

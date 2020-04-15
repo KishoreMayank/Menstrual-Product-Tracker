@@ -1,11 +1,7 @@
+import UserList from "./UserList";
+
 console.log(require('./UserArray'));
 var mod = require('./UserArray');
-// console.log(mod);
-//
-// console.log(mod[0]);
-// console.log(mod[1]);
-// console.log(mod[2]);
-
 
 import React, { Component } from 'react';
 import {
@@ -23,8 +19,6 @@ export default class Profile extends Component {
   }
 
   render() {
-    //console.log(require('./UserArray'));
-    var mod = require('./UserArray');
     return (
       <View style={styles.container}>
           <View style={styles.header}>
@@ -34,66 +28,7 @@ export default class Profile extends Component {
           </View>
 
           <View style={styles.body}>
-            <View style={styles.item}>
-              <Text style={styles.item}>User 1:</Text>
-              <View style={styles.infoContent}>
-                <Text style={styles.info}> {mod[0][0]} {mod[0][1]}</Text>
-              </View>
-              <Button
-                onPress={() => this.props.navigation.navigate('Message')}
-                title="Message User"
-                color="#D3D3D3"
-              />
-            </View>
-
-            <View style={styles.item}>
-              <Text style={styles.item}>User 2:</Text>
-              <View style={styles.infoContent}>
-                <Text style={styles.info}> {mod[1][0]} {mod[1][1]}</Text>
-              </View>
-              <Button
-                onPress={() => this.props.navigation.navigate('Message')}
-                title="Message User"
-                color="#D3D3D3"
-              />
-            </View>
-
-            <View style={styles.item}>
-              <Text style={styles.item}>User 3:</Text>
-              <View style={styles.infoContent}>
-                <Text style={styles.info}> {mod[2][0]} {mod[2][1]}</Text>
-              </View>
-              <Button
-                onPress={() => this.props.navigation.navigate('Message')}
-                title="Message User"
-                color="#D3D3D3"
-              />
-            </View>
-
-            <View style={styles.item}>
-            <Text style={styles.item}>User 4:</Text>
-              <View style={styles.infoContent}>
-                <Text style={styles.info}> {mod[3][0]} {mod[3][1]}</Text>
-              </View>
-              <Button
-                onPress={() => this.props.navigation.navigate('Message')}
-                title="Message User"
-                color="#D3D3D3"
-              />
-            </View>
-
-            <View style={styles.item}>
-            <Text style={styles.item}>User 5:</Text>
-              <View style={styles.infoContent}>
-                <Text style={styles.info}> {mod[4][0]} {mod[4][1]}</Text>
-              </View>
-              <Button
-                onPress={() => this.props.navigation.navigate('Message')}
-                title="Message User"
-                color="#D3D3D3"
-              />
-            </View>
-
+            <UserList navigation={this.props.navigation}/>
           </View>
       </View>
     );
