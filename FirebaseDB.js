@@ -21,8 +21,23 @@ export function getAllUsers() {
 
 function executeGetAllUsers(resolutionFunc, rejectionFunc) {
   dbh.collection("users").get()
-      .then(r => resolutionFunc(r.docs))
+      .then(r => {
+        let users = [];
+        r.forEach(item => {
+            let user = getUserFromDoc(item);
+            users.push(user);
+        });
+        resolutionFunc(users);
+      })
       .catch(e => rejectionFunc(e));
+}
+
+function getUserFromDoc(document) {
+  let user = {};
+  user.fName = document.get("fName");
+  user.lName = document.get("lName");
+  user.email = document.get("email");
+  return user;
 }
 
 export function getAllPins() {
