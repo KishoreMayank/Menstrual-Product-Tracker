@@ -15,6 +15,8 @@ import Profile from "./Profile";
 import Preference from "./Preference";
 import AllUsers from "./AllUsers";
 import UserArray from "./UserArray";
+import UserList from "./UserList";
+import Edit from "./Edit";
 import { StyleSheet, Text, View, Button, CheckBox, Dimensions, TouchableOpacity, AlertIOS,} from 'react-native';
 
 const {width, height} = Dimensions.get('window')
@@ -53,6 +55,14 @@ export default class App extends Component {
           <Stack.Screen
               name="AllUsers"
               component={AllUsers}
+          />
+          <Stack.Screen
+              name="Edit"
+              component={Edit}
+          />
+          <Stack.Screen
+              name="UserList"
+              component={UserList}
           />
         </Stack.Navigator>
       </NavigationContainer>
