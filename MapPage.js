@@ -38,7 +38,7 @@ export default class MapPage extends Component {
     }
 
     openChat(key) {
-        this.props.navigation.navigate('AllUsers')
+        this.props.navigation.navigate('Edit')
     }
 
     render() {
@@ -66,7 +66,7 @@ export default class MapPage extends Component {
                         >
                             <Callout tooltip>
                                 <View style={styles.bubble} >
-                                    <Button title = "Frequented Users"/>
+                                    <Button title = "More Details"/>
                                 </View>
                             </Callout>
                         </Marker>
