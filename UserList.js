@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     },
     body:{
         backgroundColor: "#778899",
-        height:500,
+        minHeight:820,
         alignItems:'flex-start',
     },
     button:{

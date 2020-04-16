@@ -26,7 +26,6 @@ export default class Profile extends Component {
                 <Text style={styles.name}>User List</Text>
             </View>
           </View>
-
           <View style={styles.body}>
             <UserList navigation={this.props.navigation}/>
           </View>
@@ -36,9 +35,6 @@ export default class Profile extends Component {
 }
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    margin: 20
-  },
   header:{
     backgroundColor: "#DCDCDC",
   },
@@ -46,55 +42,14 @@ const styles = StyleSheet.create({
     padding:30,
     alignItems: 'center',
   },
-  avatar: {
-    width: 130,
-    height: 130,
-    borderRadius: 63,
-    borderWidth: 4,
-    borderColor: "white",
-    marginBottom:10,
-  },
   name:{
     fontSize:36,
     color:"#000000",
     fontWeight:'600',
   },
-  userInfo:{
-    fontSize:16,
-    color:"#778899",
-    fontWeight:'600',
-  },
   body:{
     backgroundColor: "#778899",
-    height:500,
+    minHeight:1000,
     alignItems:'center',
   },
-  item:{
-    paddingLeft:5,
-    fontSize:18,
-    marginTop:20,
-    color: "#add8e6",
-    flexDirection : 'row',
-    fontWeight: 'bold',
-  },
-  infoContent:{
-    flex:1,
-    alignItems:'flex-start',
-    paddingLeft:5
-  },
-  iconContent:{
-    flex:1,
-    alignItems:'flex-end',
-    paddingRight:5,
-  },
-  icon:{
-    width:30,
-    height:30,
-    marginTop:20,
-  },
-  info:{
-    fontSize:18,
-    marginTop:20,
-    color: "#FFFFFF",
-  }
 });
