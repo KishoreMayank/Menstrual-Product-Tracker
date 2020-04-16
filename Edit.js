@@ -1,8 +1,4 @@
-import UserList from "./UserList";
-
-console.log(require('./UserArray'));
-var mod = require('./UserArray');
-
+import NumericInput from 'react-native-numeric-input';
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -11,24 +7,46 @@ import {
   Image,
   Button,
 } from 'react-native';
+import {
+ Dropdown }
+ from 'react-native-material-dropdown';
 
-export default class Profile extends Component {
+export default class Edit extends Component {
   constructor(props) {
       super(props);
       console.log(props);
   }
+  _onPressButton() {
+  alert('You tapped the button!')
+}
 
   render() {
+
     return (
       <View style={styles.container}>
           <View style={styles.header}>
-            <View style={styles.headerContent}>
-                <Text style={styles.name}>User List</Text>
-            </View>
-          </View>
+          <Text style={styles.headerContent}>Please edit the availibility of items at this location</Text>
+          <Text style={styles.headerContent}>Pads:</Text>
+          <NumericInput type='up-down' onChange={value => console.log(value)} />
 
-          <View style={styles.body}>
-            <UserList navigation={this.props.navigation}/>
+          <Text style={styles.headerContent}>Tampons:</Text>
+          <NumericInput type='up-down' onChange={value => console.log(value)} />
+
+          <Text style={styles.headerContent}>Panty Liners:</Text>
+          <NumericInput type='up-down' onChange={value => console.log(value)} />
+
+          <Button
+            onPress={() => alert('Changes have been saved!')}
+            title="Save Changes"
+            color="#841584"
+          />
+          <Button
+            onPress={() => this.props.navigation.navigate('UserList')}
+            title="See Users Nearby"
+            color="#841584"
+          />
+
+
           </View>
       </View>
     );
@@ -43,8 +61,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#DCDCDC",
   },
   headerContent:{
-    padding:30,
-    alignItems: 'center',
+    paddingLeft:5,
+    fontSize:18,
+    marginTop:20,
+    color: "#000000",
+    flexDirection : 'row',
+    fontWeight: 'bold',
   },
   avatar: {
     width: 130,
@@ -55,7 +77,7 @@ const styles = StyleSheet.create({
     marginBottom:10,
   },
   name:{
-    fontSize:36,
+    fontSize:22,
     color:"#000000",
     fontWeight:'600',
   },
