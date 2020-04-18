@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Blank Template",
+    "name": "Menstrual Product Tracker",
     "slug": "reactApp",
     "privacy": "public",
     "sdkVersion": "36.0.0",
@@ -24,7 +24,13 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "edu.gatech.cs4675.menstrualProductTracker",
+      "buildNumber": "0.0.1",
       "supportsTablet": true
+    },
+    "android": {
+      "package": "edu.gatech.cs4675.menstrualProductTracker",
+      "versionCode": 0.1
     }
   }
 }

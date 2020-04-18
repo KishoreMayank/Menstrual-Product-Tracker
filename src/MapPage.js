@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import 'react-native-gesture-handler';
 import MapView, { Marker, Callout } from 'react-native-maps';
 import { StyleSheet, Text, View, Button, CheckBox, Dimensions, TouchableOpacity, AlertIOS,} from 'react-native';
-// import {REACT_APP_GMAPS_KEY} from 'react-native-dotenv';
-
 
 const {width, height} = Dimensions.get('window')
 
@@ -35,6 +33,24 @@ export default class MapPage extends Component {
             error => this.setState({error: error.message}),
             { enableHighAccuracy: true, timeout: 2000, maximumAge: 2000}
         );
+
+        this.props.navigation.setOptions({
+            headerRight: () => (
+                <Button
+                    onPress={() => alert('The nearest product is at: Student' +
+                        ' Center Bathroom Level 1')}
+                    title="Find Product"
+                    color="#0a84ff"
+                />
+            ),
+            headerLeft: () => (
+                <Button
+                    onPress={() => this.props.navigation.navigate('Profile')}
+                    title="Profile"
+                    color="#0a84ff"
+                />
+            ),
+        });
     }
 
     openChat(key) {
@@ -72,13 +88,6 @@ export default class MapPage extends Component {
                         </Marker>
                     ))}
                 </MapView>
-
-                <Text style={styles.titleText}> Nearest Feminine Products </Text>
-                <Text style={{backgroundColor: 'white', opacity: 0.75}}>Click button below to generate nearest location</Text>
-
-                <Button style={{backgroundColor: 'white', opacity: 0.75}} title = "Generate" onPress={() => alert('The nearest product is at: Student Center Bathroom Level 1')}/>
-                <Button onPress={() => this.props.navigation.navigate('Profile')} title="Go to Profile" color="#841584"/>
-
             </View>
         );
     }
@@ -92,7 +101,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#add8e6',
         alignItems: 'center',
-        paddingTop: 20,
+        paddingTop: 200,
         justifyContent: 'flex-start',
     },
     titleText: {

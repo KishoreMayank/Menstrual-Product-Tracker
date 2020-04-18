@@ -9,14 +9,14 @@ if (!global.btoa) {  global.btoa = encode }
 if (!global.atob) { global.atob = decode }
 
 import MapView, { Marker, Callout } from 'react-native-maps';
-import MapPage from "./MapPage";
-import Chat from "./Chat";
-import Profile from "./Profile";
-import Preference from "./Preference";
-import AllUsers from "./AllUsers";
-import UserArray from "./UserArray";
-import UserList from "./UserList";
-import Edit from "./Edit";
+import MapPage from "./src/MapPage";
+import Chat from "./src/Chat";
+import Profile from "./src/Profile";
+import Preference from "./src/Preference";
+import AllUsers from "./src/AllUsers";
+import UserArray from "./src/UserArray";
+import UserList from "./src/UserList";
+import Edit from "./src/Edit";
 import { StyleSheet, Text, View, Button, CheckBox, Dimensions, TouchableOpacity, AlertIOS,} from 'react-native';
 
 const {width, height} = Dimensions.get('window')
